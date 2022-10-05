@@ -1,0 +1,21 @@
+﻿Сборка начата 12.09.2022 16:44:19.
+Уровень детализации журнала: Normal.     1>Проект "D:\Лабораторные\3 семестр\КПО\SE_Asm02\SE_Asm02\SE_Asm02.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Создание "Debug\SE_Asm02.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+       _MASM:
+         Assembling asm02.asm...
+         cmd.exe /C "C:\Users\admin\AppData\Local\Temp\tmp697e95c67cf047fc814358da126eb0eb.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\asm02.obj" /Fl"Debug\\" /W3 /errorReport:prompt  /Taasm02.asm
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Лабораторные\3 семестр\КПО\SE_Asm02\Debug\SE_Asm02.exe" /INCREMENTAL /ILK:"Debug\SE_Asm02.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Лабораторные\3 семестр\КПО\SE_Asm02\Debug\SE_Asm02.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Лабораторные\3 семестр\КПО\SE_Asm02\Debug\SE_Asm02.lib" /MACHINE:X86 Debug\asm02.obj
+         SE_Asm02.vcxproj -> D:\Лабораторные\3 семестр\КПО\SE_Asm02\Debug\SE_Asm02.exe
+       FinalizeBuildStatus:
+         Файл "Debug\SE_Asm02.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\SE_Asm02.tlog\SE_Asm02.lastbuildstate".
+     1>Сборка проекта "D:\Лабораторные\3 семестр\КПО\SE_Asm02\SE_Asm02\SE_Asm02.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+    Предупреждений: 0
+    Ошибок: 0
+
+Прошло времени 00:00:02.43
