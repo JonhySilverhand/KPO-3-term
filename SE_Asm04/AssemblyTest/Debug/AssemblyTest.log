@@ -1,0 +1,21 @@
+﻿Сборка начата 10.10.2022 16:41:11.
+Уровень детализации журнала: Normal.     1>Проект "D:\Лабораторные\3_семестр\КПО\SE_Asm04\AssemblyTest\AssemblyTest.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\AssemblyTest.tlog\unsuccessfulbuild".
+       _MASM:
+         Assembling Test.asm...
+         cmd.exe /C "C:\Users\admin\AppData\Local\Temp\tmpd0839801b5da4742b75f0980872c37aa.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\Test.obj" /Fl"($IntDir)" /W3 /errorReport:prompt  /TaTest.asm
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Лабораторные\3_семестр\КПО\SE_Asm04\Debug\AssemblyTest.exe" /INCREMENTAL /ILK:"Debug\AssemblyTest.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Лабораторные\3_семестр\КПО\SE_Asm04\Debug\AssemblyTest.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Лабораторные\3_семестр\КПО\SE_Asm04\Debug\AssemblyTest.lib" /MACHINE:X86 Debug\Test.obj
+         AssemblyTest.vcxproj -> D:\Лабораторные\3_семестр\КПО\SE_Asm04\Debug\AssemblyTest.exe
+       FinalizeBuildStatus:
+         Файл "Debug\AssemblyTest.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\AssemblyTest.tlog\AssemblyTest.lastbuildstate".
+     1>Сборка проекта "D:\Лабораторные\3_семестр\КПО\SE_Asm04\AssemblyTest\AssemblyTest.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+    Предупреждений: 0
+    Ошибок: 0
+
+Прошло времени 00:00:01.53
