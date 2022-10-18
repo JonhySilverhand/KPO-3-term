@@ -1,0 +1,27 @@
+﻿Сборка начата 17.10.2022 13:58:20.
+Уровень детализации журнала: Normal.     1>Проект "D:\Лабораторные\3_семестр\КПО\SE_Lab17\SE_asm01e\SE_asm01e.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\SE_asm01e.tlog\unsuccessfulbuild".
+       _MASM:
+         Assembling SE_asm01e.asm...
+         cmd.exe /C "C:\Users\admin\AppData\Local\Temp\tmp66ad6924bfbf4cbb81b6d96486c3c883.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\SE_asm01e.obj" /Fl"Debug\\" /W3 /errorReport:prompt  /TaSE_asm01e.asm
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Лабораторные\3_семестр\КПО\SE_Lab17\Debug\SE_asm01e.exe" /INCREMENTAL /ILK:"Debug\SE_asm01e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Лабораторные\3_семестр\КПО\SE_Lab17\Debug\SE_asm01e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Лабораторные\3_семестр\КПО\SE_Lab17\Debug\SE_asm01e.lib" /MACHINE:X86 ..\Debug\SE_asm01d.lib Debug\SE_asm01e.obj
+     1>LINK : warning LNK4098: библиотека по умолчанию "libucrt.lib" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+         SE_asm01e.vcxproj -> D:\Лабораторные\3_семестр\КПО\SE_Lab17\Debug\SE_asm01e.exe
+       FinalizeBuildStatus:
+         Файл "Debug\SE_asm01e.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\SE_asm01e.tlog\SE_asm01e.lastbuildstate".
+     1>Сборка проекта "D:\Лабораторные\3_семестр\КПО\SE_Lab17\SE_asm01e\SE_asm01e.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+       "D:\Лабораторные\3_семестр\КПО\SE_Lab17\SE_asm01e\SE_asm01e.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект Link) -> 
+         LINK : warning LNK4098: библиотека по умолчанию "libucrt.lib" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+
+    Предупреждений: 1
+    Ошибок: 0
+
+Прошло времени 00:00:01.73

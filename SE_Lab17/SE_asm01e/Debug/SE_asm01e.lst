@@ -1,0 +1,170 @@
+Microsoft (R) Macro Assembler Version 14.29.30140.0	    10/17/22 13:58:20
+SE_asm01e.asm						     Page 1 - 1
+
+
+				.586P
+				.MODEL FLAT, STDCALL
+				includelib kernel32.lib
+				includelib libucrt.lib
+				includelib SE_asm01d.lib
+
+
+				ExitProcess			PROTO: DWORD
+				SetConsoleTitleA	PROTO: DWORD
+				GetStdHandle		PROTO: DWORD
+				WriteConsoleA		PROTO: DWORD, :DWORD, :DWORD, :DWORD, :DWORD
+				EXTRN getmin: proc
+				EXTRN getmax: proc
+
+				.STACK 4096
+
+ 00000000			.CONST
+ 00000000 53 45 5F 61 73	consoletitle DB 'SE_asm01e', 0
+	   6D 30 31 65 00
+ 0000000A 00000003		Arr			 DD  3, -12, 68, 84, -77, 90, 1, -45, 9, 54
+	   FFFFFFF4
+	   00000044
+	   00000054
+	   FFFFFFB3
+	   0000005A
+	   00000001
+	   FFFFFFD3
+	   00000009
+	   00000036
+
+ 00000000			.DATA	
+ 00000000 00000000			result			sdword 0
+ 00000004 67 65 74 6D 61		result1			BYTE "getmax + getmin = ", 0
+	   78 20 2B 20 67
+	   65 74 6D 69 6E
+	   20 3D 20 00
+ 00000017  00000028 [			result2			BYTE 40 dup(0)
+	    00
+	   ]
+ 0000003F 00000000			consolehandle	DD 0h
+
+ 00000000			.CODE
+
+ 00000000			main PROC
+ 00000000			START:
+ 00000000  E8 00000000 E		call SetConsoleTitleA
+ 00000005  68 00000000 R		push offset consoletitle
+					
+
+ 0000000A  6A F5			push -11
+ 0000000C  E8 00000000 E		call GetStdHandle
+ 00000011  A3 0000003F R		mov consolehandle, eax
+
+ 00000016  6A 0A			push lengthof Arr
+ 00000018  68 0000000A R		push offset Arr
+ 0000001D  E8 00000000 E		call getmin
+
+ 00000022  A3 00000000 R		mov result, eax
+
+ 00000027  6A 0A			push lengthof Arr
+ 00000029  68 0000000A R		push offset Arr
+ 0000002E  E8 00000000 E		call getmax
+
+ 00000033  01 05 00000000 R		add result, eax
+ 00000039  33 C0			xor eax, eax
+
+ 0000003B  FF 35 00000000 R		push result
+ 00000041  68 00000017 R		push offset result2
+ 00000046  E8 00000033			call tochar
+
+					invoke WriteConsoleA, consolehandle, offset result1, sizeof result1, 0, 0
+					invoke WriteConsoleA, consolehandle, offset result2, sizeof result2, 0, 0
+
+ 00000077  6A 00			push 0
+ 00000079  E8 00000000 E		call ExitProcess
+
+ 0000007E			main ENDP
+
+ 0000007E			tochar PROC uses eax ebx ecx edi esi, pstr: dword, intfield: sdword
+ 00000086  8B 7D 08			mov edi, pstr
+ 00000089  BE 00000000			mov esi, 0
+ 0000008E  8B 45 0C			mov eax, intfield
+ 00000091  99				cdq
+ 00000092  BB 0000000A			mov ebx, 10
+ 00000097  F7 FB			idiv ebx
+ 00000099			Cycle: 
+ 00000099  66| 52			push dx
+ 0000009B  46				inc esi
+ 0000009C  85 C0			test eax, eax
+ 0000009E  74 05			jz fin
+ 000000A0  99				cdq
+ 000000A1  F7 FB			idiv ebx
+ 000000A3  EB F4			jmp Cycle
+
+ 000000A5			fin:
+ 000000A5  8B CE			mov ecx, esi
+ 000000A7			write:
+ 000000A7  66| 5B			pop bx
+ 000000A9  80 C3 30			add bl, '0'
+ 000000AC  88 1F			mov [edi], bl
+ 000000AE  47				inc edi
+ 000000AF  E2 F6			loop write
+
+					ret
+ 000000BA			tochar ENDP
+
+				END main
+Microsoft (R) Macro Assembler Version 14.29.30140.0	    10/17/22 13:58:20
+SE_asm01e.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CONST  . . . . . . . . . . . . .	32 Bit	 00000032 Para	  Public  'CONST'	 ReadOnly
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000043 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 000000BA Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+GetStdHandle . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+SetConsoleTitleA . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+WriteConsoleA  . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000007E Public STDCALL
+  START  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+tochar . . . . . . . . . . . . .	P Near	 0000007E _TEXT	Length= 0000003C Public STDCALL
+  pstr . . . . . . . . . . . . .	DWord	 bp + 00000008
+  intfield . . . . . . . . . . .	DWord	 bp + 0000000C
+  Cycle  . . . . . . . . . . . .	L Near	 00000099 _TEXT	
+  fin  . . . . . . . . . . . . .	L Near	 000000A5 _TEXT	
+  write  . . . . . . . . . . . .	L Near	 000000A7 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+Arr  . . . . . . . . . . . . . .	DWord	 0000000A CONST	
+consolehandle  . . . . . . . . .	DWord	 0000003F _DATA	
+consoletitle . . . . . . . . . .	Byte	 00000000 CONST	
+getmax . . . . . . . . . . . . .	L Near	 00000000 FLAT	External STDCALL
+getmin . . . . . . . . . . . . .	L Near	 00000000 FLAT	External STDCALL
+result1  . . . . . . . . . . . .	Byte	 00000004 _DATA	
+result2  . . . . . . . . . . . .	Byte	 00000017 _DATA	
+result . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+
+	   0 Warnings
+	   0 Errors

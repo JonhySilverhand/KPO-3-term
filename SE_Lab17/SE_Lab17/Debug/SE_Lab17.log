@@ -1,0 +1,17 @@
+﻿Сборка начата 10.10.2022 11:48:12.
+Уровень детализации журнала: Normal.     1>Проект "D:\Лабораторные\3_семестр\КПО\SE_Lab17\SE_Lab17\SE_Lab17.vcxproj" в узле 2 (целевые объекты Build).
+     1>PrepareForBuild:
+         Создание каталога "D:\Лабораторные\3_семестр\КПО\SE_Lab17\Debug\".
+         Создание каталога "Debug\SE_Lab17.tlog\".
+       InitializeBuildStatus:
+         Создание "Debug\SE_Lab17.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+       FinalizeBuildStatus:
+         Файл "Debug\SE_Lab17.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\SE_Lab17.tlog\SE_Lab17.lastbuildstate".
+     1>Сборка проекта "D:\Лабораторные\3_семестр\КПО\SE_Lab17\SE_Lab17\SE_Lab17.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+    Предупреждений: 0
+    Ошибок: 0
+
+Прошло времени 00:00:00.31
